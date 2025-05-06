@@ -39,7 +39,7 @@ const AdviceBox = () => {
           "{advice}"
         </p>
         <img
-          src="/src/assets/images/pattern-divider-mobile.svg"
+          src="./src/assets/images/pattern-divider-mobile.svg"
           alt="divider"
         />
         <button
@@ -47,7 +47,7 @@ const AdviceBox = () => {
           className="bg-[hsl(150,100%,66%)] p-4 rounded-full cursor-pointer hover:shadow-[1px_1px_15px_6px_rgb(82_255_168_/_1)]"
         >
           <img
-            src="/src/assets/images/icon-dice.svg"
+            src="./src/assets/images/icon-dice.svg"
             alt="dice"
             // onClick={getAdvice}
           />
