@@ -1,7 +1,7 @@
 name: Advice Generator
 
 on:
-workflow_dispatch:
+  workflow_dispatch:
   push:
     branches:
       - main
