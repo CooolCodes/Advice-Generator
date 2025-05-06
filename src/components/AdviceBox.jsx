@@ -32,12 +32,15 @@ const AdviceBox = () => {
         <p className="text-2xl text-[hsl(193,38%,86%)] text-center">
           "{advice}"
         </p>
-        <img src="/assets/images/pattern-divider-mobile.svg" alt="divider" />
+        <img
+          src="/public/assets/images/pattern-divider-mobile.svg"
+          alt="divider"
+        />
         <button
           onClick={getAdvice}
           className="bg-[hsl(150,100%,66%)] p-4 rounded-full cursor-pointer hover:shadow-[1px_1px_15px_6px_rgb(82_255_168_/_1)]"
         >
-          <img src="/assets/images/icon-dice.svg" alt="dice" />
+          <img src="/public/assets/images/icon-dice.svg" alt="dice" />
         </button>
       </div>
     </div>
