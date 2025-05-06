@@ -17,19 +17,13 @@ const getRandomAdvice = async () => {
 };
 
 const AdviceBox = () => {
-  const [adviceId, setAdviceID] = useState(null);
+  const [adviceId, setAdviceId] = useState(null);
   const [advice, setAdvice] = useState([]);
 
-  const getAdviceId = async () => {
-    const adviceId = await getRandomAdvice();
-    setAdviceId(advice);
-  };
-
   const getAdvice = async () => {
-    const adviceId = await getRandomAdvice();
-    const advice = await getRandomAdvice();
-    setAdviceID(advice.id);
-    setAdvice(advice.advice);
+    const adviceData = await getRandomAdvice();
+    setAdviceId(adviceData.id);
+    setAdvice(adviceData.advice);
   };
   return (
     <div className="bg-[hsl(218,23%,16%)] p-20">
@@ -38,19 +32,12 @@ const AdviceBox = () => {
         <p className="text-2xl text-[hsl(193,38%,86%)] text-center">
           "{advice}"
         </p>
-        <img
-          src="./src/assets/images/pattern-divider-mobile.svg"
-          alt="divider"
-        />
+        <img src="/assets/images/pattern-divider-mobile.svg" alt="divider" />
         <button
           onClick={getAdvice}
           className="bg-[hsl(150,100%,66%)] p-4 rounded-full cursor-pointer hover:shadow-[1px_1px_15px_6px_rgb(82_255_168_/_1)]"
         >
-          <img
-            src="./src/assets/images/icon-dice.svg"
-            alt="dice"
-            // onClick={getAdvice}
-          />
+          <img src="/assets/images/icon-dice.svg" alt="dice" />
         </button>
       </div>
     </div>
