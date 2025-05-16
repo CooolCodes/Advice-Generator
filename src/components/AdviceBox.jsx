@@ -15,25 +15,6 @@ const getRandomAdvice = async () => {
 const AdviceBox = () => {
   const [adviceId, setAdviceId] = useState();
   const [advice, setAdvice] = useState();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    // Screen size detection
-    const screenQuery = window.matchMedia("(max-width: 767px)");
-
-    const handleChange = () => {
-      setIsMobile(screenQuery.matches);
-    };
-
-    screenQuery.addListener(handleChange);
-
-    return () => {
-      screenQuery.removeListener(handleChange);
-    };
-  }, []);
-  const getBackgroundImage = () => {
-    return isMobile ? divider : desktopDivider;
-  };
 
   const getAdvice = async () => {
     const adviceData = await getRandomAdvice();
