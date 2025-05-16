@@ -30,12 +30,12 @@ const AdviceBox = () => {
         </p>
         {/* Mobile */}
         <div
-          className="h-64 bg-cover bg-center md:hidden"
+          className="h-5 bg-cover bg-center md:hidden"
           style={{ backgroundImage: `url(${divider})` }}
         ></div>
         {/* Desktop */}
         <div
-          className="hidden h-64 bg-cover bg-center md:block"
+          className="hidden h-5 bg-cover bg-center md:block"
           style={{ backgroundImage: `url(${desktopDivider})` }}
         ></div>
         {/* <div
