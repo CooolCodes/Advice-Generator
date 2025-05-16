@@ -15,6 +15,27 @@ const getRandomAdvice = async () => {
 const AdviceBox = () => {
   const [adviceId, setAdviceId] = useState();
   const [advice, setAdvice] = useState();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    // Screen size detection
+    const screenQuery = window.matchMedia("(max-width: 767px)");
+
+    const handleChange = () => {
+      setIsMobile(screenQuery.matches);
+    };
+
+    screenQuery.addListener(handleChange);
+
+    return () => {
+      screenQuery.removeListener(handleChange);
+    };
+  }, []);
+  const getBackgroundImage = () => {
+    if (isMobile) {
+      return isMobile ? divider : desktopDivider;
+    }
+  };
 
   const getAdvice = async () => {
     const adviceData = await getRandomAdvice();
@@ -30,6 +51,7 @@ const AdviceBox = () => {
         </p>
         <div
           className={`bg-[url(${divider})] w-full h-auto bg-no-repeat bg-center lg:bg-[(${desktopDivider}))] lg:h-auto lg:w-full`}
+          style={{ backgroundImage: `url(${getBackgroundImage()})` }}
         ></div>
         <button
           onClick={getAdvice}
